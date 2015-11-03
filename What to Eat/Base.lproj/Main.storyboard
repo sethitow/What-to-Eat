@@ -1,25 +1,331 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iJ7-Uu-CRg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--What can I eat NOW?-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="What_to_Eat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9CC-gC-JG1">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoodItemCell" rowHeight="100" id="Tmp-m3-fau" customClass="FoodItemCell" customModule="What_to_Eat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tmp-m3-fau" id="H6K-jA-CtZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="grilledchicken.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="sRc-3y-ggU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="over spinach salad  with roasted shallot-balsamic" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltG-mR-Crs">
+                                                    <rect key="frame" x="8" y="23" width="304" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Local Point, Big Kitchen" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUM-5o-J6t" userLabel="Location Label">
+                                                    <rect key="frame" x="132" y="73" width="180" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Closing in 5:34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Imj-gF-XdX">
+                                                    <rect key="frame" x="8" y="73" width="140" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Grilled chicken breast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDL-Eq-y2W">
+                                                    <rect key="frame" x="8" y="0.0" width="304" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Imj-gF-XdX" firstAttribute="top" secondItem="ltG-mR-Crs" secondAttribute="bottom" id="0pa-KQ-OoW"/>
+                                                <constraint firstItem="sRc-3y-ggU" firstAttribute="top" secondItem="H6K-jA-CtZ" secondAttribute="topMargin" constant="-8" id="AwV-vo-FmT"/>
+                                                <constraint firstItem="sDL-Eq-y2W" firstAttribute="leading" secondItem="H6K-jA-CtZ" secondAttribute="leadingMargin" id="Gia-rg-Cs6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sRc-3y-ggU" secondAttribute="trailing" constant="-8" id="HS8-it-ISo"/>
+                                                <constraint firstItem="PUM-5o-J6t" firstAttribute="trailing" secondItem="H6K-jA-CtZ" secondAttribute="trailingMargin" id="IYj-Wi-n5H"/>
+                                                <constraint firstItem="sDL-Eq-y2W" firstAttribute="top" secondItem="H6K-jA-CtZ" secondAttribute="topMargin" constant="-8" id="JzM-go-Hhq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="PUM-5o-J6t" secondAttribute="bottom" constant="-2.5" id="NTa-kY-SJV"/>
+                                                <constraint firstItem="Imj-gF-XdX" firstAttribute="leading" secondItem="H6K-jA-CtZ" secondAttribute="leadingMargin" id="b5d-ZY-J6Q"/>
+                                                <constraint firstItem="sRc-3y-ggU" firstAttribute="leading" secondItem="H6K-jA-CtZ" secondAttribute="leadingMargin" constant="-8" id="hgJ-hB-EI9"/>
+                                                <constraint firstItem="ltG-mR-Crs" firstAttribute="trailing" secondItem="H6K-jA-CtZ" secondAttribute="trailingMargin" id="oVD-gm-qa8"/>
+                                                <constraint firstItem="ltG-mR-Crs" firstAttribute="top" secondItem="sDL-Eq-y2W" secondAttribute="bottom" id="sgR-BO-0oT"/>
+                                                <constraint firstItem="ltG-mR-Crs" firstAttribute="leading" secondItem="H6K-jA-CtZ" secondAttribute="leadingMargin" id="vDO-bW-Nhy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Imj-gF-XdX" secondAttribute="bottom" constant="-2.5" id="vJJ-KO-O5f"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="sRc-3y-ggU" secondAttribute="bottom" constant="-8" id="zAb-3v-m3R"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ClosingTimeLabel" destination="Imj-gF-XdX" id="b0A-GM-3Kw"/>
+                                            <outlet property="FoodImageView" destination="sRc-3y-ggU" id="OXn-X4-sc2"/>
+                                            <outlet property="descriptionLabel" destination="ltG-mR-Crs" id="Fe6-rV-Y9I"/>
+                                            <outlet property="locationLabel" destination="PUM-5o-J6t" id="CRd-Li-Tno"/>
+                                            <outlet property="titleLabel" destination="sDL-Eq-y2W" id="QG1-gC-dms"/>
+                                            <segue destination="y4E-OL-uBR" kind="show" identifier="showLocationSegue" id="ki1-kl-0AS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9CC-gC-JG1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Eyh-KS-sZd"/>
+                            <constraint firstItem="9CC-gC-JG1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="dHV-71-fnb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9CC-gC-JG1" secondAttribute="trailing" constant="-20" id="tKC-F5-27e"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9CC-gC-JG1" secondAttribute="bottom" id="yHr-Tc-93y"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="What can I eat NOW?" id="I88-Ld-BoL"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="9CC-gC-JG1" id="a3q-K2-nZs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1548" y="291"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="cU9-nt-HCV">
+            <objects>
+                <viewController id="y4E-OL-uBR" customClass="LocationViewController" customModule="What_to_Eat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PAE-1l-RAt"/>
+                        <viewControllerLayoutGuide type="bottom" id="aQr-x7-gud"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LYK-Hf-f8J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="266" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p8b-6W-40e">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationItemCell" rowHeight="266" id="D0k-52-Xyv" customClass="LocationItemCell" customModule="What_to_Eat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="266"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D0k-52-Xyv" id="yFw-Fn-cmr">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="266"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" alpha="0.44999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="localpoint.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="LNm-hR-YKz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="174"/>
+                                                </imageView>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.65000000000000002" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SI1-pT-0oH">
+                                                    <rect key="frame" x="0.0" y="175" width="320" height="91"/>
+                                                </mapView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="LocationItemCell" text="The Big Kitchen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MV6-a7-C3G">
+                                                    <rect key="frame" x="8" y="8" width="304" height="35"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="serves wholesome meals reminiscent of home, wherever home may be. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrL-rU-gm1">
+                                                    <rect key="frame" x="8" y="36" width="304" height="47"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4:30 PM to 8:30 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9b8-dv-EDQ">
+                                                    <rect key="frame" x="114" y="148" width="215" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10:30 AM to 2:30 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42Y-Ci-lTx">
+                                                    <rect key="frame" x="114" y="125" width="215" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breakfast" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xB8-we-kkV">
+                                                    <rect key="frame" x="-40" y="102" width="146" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7:30 AM to 10 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1O-Nt-cnO">
+                                                    <rect key="frame" x="114" y="102" width="215" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lunch" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owV-0L-07G">
+                                                    <rect key="frame" x="-40" y="125" width="146" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dinner" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7W-Nh-JH2">
+                                                    <rect key="frame" x="-40" y="148" width="146" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hours:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JQ-st-cj0">
+                                                    <rect key="frame" x="8" y="80" width="90" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCT-B1-fG5">
+                                                    <rect key="frame" x="8" y="175" width="90" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lander Hall" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXX-yX-c4v">
+                                                    <rect key="frame" x="53" y="195" width="215" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1201 NE Campus Pkwy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5e-OJ-m8V">
+                                                    <rect key="frame" x="53" y="217" width="215" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seattle, WA 98105" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dL-t3-Td6">
+                                                    <rect key="frame" x="53" y="237" width="215" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="breakfastHoursString" destination="u1O-Nt-cnO" id="1Mi-Ub-yni"/>
+                                            <outlet property="dinnerHoursString" destination="9b8-dv-EDQ" id="2HM-ev-6XA"/>
+                                            <outlet property="locationDescription" destination="FrL-rU-gm1" id="aFj-T2-Eni"/>
+                                            <outlet property="locationLine1" destination="cXX-yX-c4v" id="qaI-fh-cHM"/>
+                                            <outlet property="locationLine2" destination="K5e-OJ-m8V" id="sGn-Ve-7Tq"/>
+                                            <outlet property="locationLine3" destination="2dL-t3-Td6" id="rWo-Rr-6eY"/>
+                                            <outlet property="locationTitle" destination="MV6-a7-C3G" id="gPc-3B-T7R"/>
+                                            <outlet property="lunchHoursString" destination="42Y-Ci-lTx" id="oYu-0h-kAJ"/>
+                                            <outlet property="mapView" destination="SI1-pT-0oH" id="n8G-ZP-goK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoodItemCell" rowHeight="100" id="vhh-NC-H5j" customClass="FoodItemCell" customModule="What_to_Eat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="358" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vhh-NC-H5j" id="gfb-XU-UFZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grilledchicken.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Ndp-kw-HZa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="over spinach salad  with roasted shallot-balsamic" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxU-K9-80Y">
+                                                    <rect key="frame" x="8" y="23" width="304" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Local Point, Big Kitchen" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pI0-eo-5Gf" userLabel="Location Label">
+                                                    <rect key="frame" x="132" y="73" width="180" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Closing in 5:34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofK-bi-Qvr">
+                                                    <rect key="frame" x="8" y="73" width="140" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Grilled chicken breast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbd-Yp-Kyc">
+                                                    <rect key="frame" x="8" y="0.0" width="304" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Rbd-Yp-Kyc" firstAttribute="top" secondItem="gfb-XU-UFZ" secondAttribute="topMargin" constant="-8" id="1a6-pl-SpY"/>
+                                                <constraint firstItem="ofK-bi-Qvr" firstAttribute="top" secondItem="BxU-K9-80Y" secondAttribute="bottom" id="7tZ-yD-ebA"/>
+                                                <constraint firstItem="BxU-K9-80Y" firstAttribute="leading" secondItem="gfb-XU-UFZ" secondAttribute="leadingMargin" id="AyX-Hg-aUp"/>
+                                                <constraint firstItem="Ndp-kw-HZa" firstAttribute="leading" secondItem="gfb-XU-UFZ" secondAttribute="leadingMargin" constant="-8" id="DdT-Mv-3vS"/>
+                                                <constraint firstItem="pI0-eo-5Gf" firstAttribute="trailing" secondItem="gfb-XU-UFZ" secondAttribute="trailingMargin" id="Khl-0a-3e9"/>
+                                                <constraint firstItem="Rbd-Yp-Kyc" firstAttribute="leading" secondItem="gfb-XU-UFZ" secondAttribute="leadingMargin" id="OZQ-gR-UwK"/>
+                                                <constraint firstItem="ofK-bi-Qvr" firstAttribute="leading" secondItem="gfb-XU-UFZ" secondAttribute="leadingMargin" id="TRa-tp-mqo"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ndp-kw-HZa" secondAttribute="trailing" constant="-8" id="WWC-Xv-NDE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ofK-bi-Qvr" secondAttribute="bottom" constant="-2.5" id="XVc-n8-i6N"/>
+                                                <constraint firstItem="BxU-K9-80Y" firstAttribute="top" secondItem="Rbd-Yp-Kyc" secondAttribute="bottom" id="aOH-jL-3Z3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Ndp-kw-HZa" secondAttribute="bottom" constant="-8" id="cGA-KA-22M"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="pI0-eo-5Gf" secondAttribute="bottom" constant="-2.5" id="dnJ-7u-SPs"/>
+                                                <constraint firstItem="BxU-K9-80Y" firstAttribute="trailing" secondItem="gfb-XU-UFZ" secondAttribute="trailingMargin" id="gEA-34-MT9"/>
+                                                <constraint firstItem="Ndp-kw-HZa" firstAttribute="top" secondItem="gfb-XU-UFZ" secondAttribute="topMargin" constant="-8" id="m4J-yH-2Nu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ClosingTimeLabel" destination="ofK-bi-Qvr" id="GZN-G1-L86"/>
+                                            <outlet property="FoodImageView" destination="Ndp-kw-HZa" id="6ev-bh-Xds"/>
+                                            <outlet property="descriptionLabel" destination="BxU-K9-80Y" id="6lx-UI-43G"/>
+                                            <outlet property="locationLabel" destination="pI0-eo-5Gf" id="aiX-2j-uQg"/>
+                                            <outlet property="titleLabel" destination="Rbd-Yp-Kyc" id="wWl-e3-agY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="y4E-OL-uBR" id="oUw-QC-0uW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="locationTableView" destination="p8b-6W-40e" id="9WA-iR-Dnb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gcz-TW-5pn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2036" y="291"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="apD-D1-PcN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iJ7-Uu-CRg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vsw-ZT-wry">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eMe-st-38G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3BM-GG-GP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="736" y="291"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="grilledchicken.jpeg" width="275" height="183"/>
+        <image name="localpoint.jpg" width="338" height="240"/>
+    </resources>
 </document>
