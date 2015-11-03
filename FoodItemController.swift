@@ -15,71 +15,75 @@ class FoodItemController: NSObject {
     var allFoodItems = [FoodItem]()
     
     //commented out due to depricated date format
-//    func updateDataWithDummyData(){
-//        
-//        allFoodItems.removeAll()
-//        
-//        allFoodItems.append(FoodItem(
-//            title: "Grilled chicken breast",
-//            foodDescription: "over spinach salad with roasted shallot-balsamic",
-//            location: "Local Point, Big Kitchen",
-//            locationID: "The Big Kitchen",
-//            openingTime: 990,
-//            closingTime: 1230,
-//            mealOfDayString: "dinner",
-//            imageName: "grilledchicken.jpeg"))
-//        
-//        allFoodItems.append(FoodItem(
-//            title: "Thai Red Curry",
-//            foodDescription: "with chicken or tofu",
-//            location: "Local Point, Big Kitchen",
-//            locationID: "The Big Kitchen",
-//            openingTime: 990,
-//            closingTime: 1230,
-//            mealOfDayString: "dinner",
-//            imageName: "redthaicurry.jpeg"))
-//        
-//        allFoodItems.append(FoodItem(
-//            title: "Chicago Style Beef Sandwich",
-//            foodDescription: "with giardiniera vegetables and spicy au jus and house-fried chips",
-//            location: "Local Point, Global Kitchen",
-//            locationID: "The Global Kitchen",
-//            openingTime: 990,
-//            closingTime: 1230,
-//            mealOfDayString: "dinner",
-//            imageName: "chicagobeef.jpeg"))
-//        
-//        allFoodItems.append(FoodItem(
-//            title: "Stovetop Mac and Cheese",
-//            foodDescription: "Add your own ingredients, blah",
-//            location: "Local Point, Custom Kitchen",
-//            locationID: "The Custom Kitchen",
-//            openingTime: 990,
-//            closingTime: 1230,
-//            mealOfDayString: "dinner",
-//            imageName: "macncheese.jpeg"))
-//        
-//        allFoodItems.append(FoodItem(
-//            title: "Stovetop Mac and Cheese",
-//            foodDescription: "Add your own ingredients, blah",
-//            location: "Local Point, Custom Kitchen",
-//            locationID: "The Custom Kitchen",
-//            openingTime: 990,
-//            closingTime: 1230,
-//            mealOfDayString: "dinner",
-//            imageName: "macncheese.jpeg"))
-//        
-//        allFoodItems.append(FoodItem(
-//            title: "Big Kahuna Burger",
-//            foodDescription: "A tasty burger",
-//            location: "Local Point, Custom Kitchen",
-//            locationID: "The Custom Kitchen",
-//            openingTime: 990,
-//            closingTime: 1230,
-//            mealOfDayString: "dinner",
-//            imageName: "tastyburger.jpeg"))
-//        
-//    }
+    func updateDataWithDummyData(){
+        
+        allFoodItems.removeAll()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let earlyDate = dateFormatter.dateFromString("2015-11-02T01:00:00-08:00")
+        let lateDate = dateFormatter.dateFromString("2015-11-02T23:45:00-08:00")
+        
+        allFoodItems.append(FoodItem(
+            title: "Grilled chicken breast",
+            foodDescription: "over spinach salad with roasted shallot-balsamic",
+            location: "Local Point, Big Kitchen",
+            locationID: "The Big Kitchen",
+            openingTime: earlyDate!,
+            closingTime: lateDate!,
+            mealOfDayString: "dinner",
+            imageName: "grilledchicken.jpeg"))
+        
+        allFoodItems.append(FoodItem(
+            title: "Thai Red Curry",
+            foodDescription: "with chicken or tofu",
+            location: "Local Point, Big Kitchen",
+            locationID: "The Big Kitchen",
+            openingTime: earlyDate!,
+            closingTime: lateDate!,
+            mealOfDayString: "dinner",
+            imageName: "redthaicurry.jpeg"))
+        
+        allFoodItems.append(FoodItem(
+            title: "Chicago Style Beef Sandwich",
+            foodDescription: "with giardiniera vegetables and spicy au jus and house-fried chips",
+            location: "Local Point, Global Kitchen",
+            locationID: "The Global Kitchen",
+            openingTime: earlyDate!,
+            closingTime: lateDate!,
+            mealOfDayString: "dinner",
+            imageName: "chicagobeef.jpeg"))
+        
+        allFoodItems.append(FoodItem(
+            title: "Stovetop Mac and Cheese",
+            foodDescription: "Add your own ingredients, blah",
+            location: "Local Point, Custom Kitchen",
+            locationID: "The Custom Kitchen",
+            openingTime: earlyDate!,
+            closingTime: lateDate!,
+            mealOfDayString: "dinner",
+            imageName: "macncheese.jpeg"))
+        
+        allFoodItems.append(FoodItem(
+            title: "Stovetop Mac and Cheese",
+            foodDescription: "Add your own ingredients, blah",
+            location: "Local Point, Custom Kitchen",
+            locationID: "The Custom Kitchen",
+            openingTime: earlyDate!,
+            closingTime: lateDate!,
+            mealOfDayString: "dinner",
+            imageName: "macncheese.jpeg"))
+        
+        allFoodItems.append(FoodItem(
+            title: "Big Kahuna Burger",
+            foodDescription: "A tasty burger",
+            location: "Local Point, Custom Kitchen",
+            locationID: "The Custom Kitchen",
+            openingTime: earlyDate!,
+            closingTime: lateDate!,
+            mealOfDayString: "dinner",
+            imageName: "tastyburger.jpeg"))
+        
+    }
     
     func updateDataFromWeb(){
         
