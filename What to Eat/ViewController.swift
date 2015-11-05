@@ -14,7 +14,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var tableView: UITableView!
     
 
-    
     var foodItems = [FoodItem]()
     
     override func viewDidLoad() {
@@ -30,7 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.registerClass(FoodItemCell.self, forCellReuseIdentifier: "foodItemCell")
         
         
-        FoodItemController.sharedInstance.updateDataFromWeb()
+        FoodItemController.sharedInstance.updateDataWithDummyData()
         foodItems = FoodItemController.sharedInstance.returnNowFoodItems();
         
 
@@ -131,6 +130,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func enteredForeground(notification: NSNotification) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        
         tableView.reloadData()
         
     }
