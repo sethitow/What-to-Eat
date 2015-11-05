@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.registerClass(FoodItemCell.self, forCellReuseIdentifier: "foodItemCell")
         
         
-        FoodItemController.sharedInstance.updateDataWithDummyData()
+        FoodItemController.sharedInstance.updateDataFromWeb()
         foodItems = FoodItemController.sharedInstance.returnNowFoodItems();
         
 
