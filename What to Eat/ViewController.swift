@@ -36,8 +36,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if (foodItems.isEmpty){
         
             foodItems.append(FoodItem(
-                title: "No food is avalible",
-                foodDescription: "Localpoint seems to be closed",
+                title: "No specials are avalible right now",
+                foodDescription: "",
                 location: "",
                 locationID: "The Big Kitchen",
                 openingTime: NSDate(),
