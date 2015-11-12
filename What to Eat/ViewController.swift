@@ -85,7 +85,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let minutesUntilClose = totalMinutesUntilClose%60
         
         //if the dish closes in less than 2 hours, give a countdown
-        if(item.title == "No food is avalible"){
+        if(item.title == "No specials are avalible right now"){
             cell.closingTimeLabel.text=""
         }
         else if(hoursUntilClose >= 1){
