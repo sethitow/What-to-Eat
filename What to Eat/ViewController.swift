@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet var tableView: UITableView!
     
+    
 
     var foodItems = [FoodItem]()
     
@@ -31,6 +32,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         FoodItemController.sharedInstance.updateDataFromWeb()
         foodItems = FoodItemController.sharedInstance.returnNowFoodItems();
+        
+        if (foodItems.isEmpty){
+        
+            foodItems.append(FoodItem(
+                title: "No food is avalible",
+                foodDescription: "Localpoint seems to be closed",
+                location: "",
+                locationID: "The Big Kitchen",
+                openingTime: NSDate(),
+                closingTime: NSDate(),
+                mealOfDayString: "allDay",
+                imageName: ""))
+        
+            
+        }
         
 
         
@@ -69,7 +85,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let minutesUntilClose = totalMinutesUntilClose%60
         
         //if the dish closes in less than 2 hours, give a countdown
-        if(hoursUntilClose >= 1){
+        if(item.title == "No food is avalible"){
+            cell.closingTimeLabel.text=""
+        }
+        else if(hoursUntilClose >= 1){
             cell.closingTimeLabel.text = "Closing in " + String(hoursUntilClose) + " hours."
         }
         //if the dish closes in more than 2 hours, give the closing time
@@ -131,7 +150,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func enteredForeground(notification: NSNotification) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
         
-        if(FoodItemController.sharedInstance.lastUpdate.timeIntervalSinceDate(NSDate()) > 300){ // if last update was longer than 5 mins ago
+        if(NSDate().timeIntervalSinceDate(FoodItemController.sharedInstance.lastUpdate) > 300){ // if last update was longer than 5 mins ago
             
         FoodItemController.sharedInstance.updateDataFromWeb() // reupdate with web data
         
