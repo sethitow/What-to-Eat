@@ -1,0 +1,11 @@
+.vcenter-parent{
+ 	display:flex;
+ 	align-items:center;
+
+}
+
+.copyright {
+	padding: 10px 0;
+	background: rgb(238, 238, 238);
+	border-top-color: #292929;
+}
