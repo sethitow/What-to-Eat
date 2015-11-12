@@ -205,6 +205,20 @@ class LocationViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
     }
     
+    var locationManager = CLLocationManager()
+    func checkLocationAuthorizationStatus() {
+        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
+            //We have authorization!!
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        checkLocationAuthorizationStatus()
+    }
+    
     
     
     override func didReceiveMemoryWarning() {
