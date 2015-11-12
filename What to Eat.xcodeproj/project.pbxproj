@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D519FC21BF2FCA60082F8A3 /* Rosemary-garlic pork loin.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5D519FC11BF2FCA60082F8A3 /* Rosemary-garlic pork loin.jpeg */; settings = {ASSET_TAGS = (); }; };
+		5D519FC41BF2FCF70082F8A3 /* tastyburger.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5D519FC31BF2FCF70082F8A3 /* tastyburger.jpeg */; settings = {ASSET_TAGS = (); }; };
 		5D696E2C1BE849ED00B45AC7 /* sharedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D696E2B1BE849ED00B45AC7 /* sharedCode.swift */; settings = {ASSET_TAGS = (); }; };
 		5D6AA6A31BCA1990004F0445 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D6AA69F1BCA1990004F0445 /* blue.png */; settings = {ASSET_TAGS = (); }; };
 		5D6AA6A41BCA1990004F0445 /* chicagobeef.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5D6AA6A01BCA1990004F0445 /* chicagobeef.jpeg */; settings = {ASSET_TAGS = (); }; };
@@ -55,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D519FC11BF2FCA60082F8A3 /* Rosemary-garlic pork loin.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Rosemary-garlic pork loin.jpeg"; sourceTree = "<group>"; };
+		5D519FC31BF2FCF70082F8A3 /* tastyburger.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tastyburger.jpeg; sourceTree = "<group>"; };
 		5D696E2B1BE849ED00B45AC7 /* sharedCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = sharedCode.swift; path = "What to Eat/sharedCode.swift"; sourceTree = "<group>"; };
 		5D6AA69F1BCA1990004F0445 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
 		5D6AA6A01BCA1990004F0445 /* chicagobeef.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chicagobeef.jpeg; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 		5D6AA69E1BCA1965004F0445 /* Food Images */ = {
 			isa = PBXGroup;
 			children = (
+				5D519FC31BF2FCF70082F8A3 /* tastyburger.jpeg */,
+				5D519FC11BF2FCA60082F8A3 /* Rosemary-garlic pork loin.jpeg */,
 				5D6AA6AA1BCA2275004F0445 /* macncheese.jpeg */,
 				5D6AA6AB1BCA2275004F0445 /* redthaicurry.jpeg */,
 				5D6AA69F1BCA1990004F0445 /* blue.png */,
@@ -282,7 +288,7 @@
 				TargetAttributes = {
 					5DE8C90D1BC8FB5C00B302DC = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = B6XS8JQQV7;
+						DevelopmentTeam = SWX5KU65XJ;
 					};
 					5DE8C9211BC8FB5C00B302DC = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -327,11 +333,13 @@
 				5DE8C91C1BC8FB5C00B302DC /* LaunchScreen.storyboard in Resources */,
 				5D6AA6A51BCA1990004F0445 /* grilledchicken.jpeg in Resources */,
 				5D6AA6A41BCA1990004F0445 /* chicagobeef.jpeg in Resources */,
+				5D519FC41BF2FCF70082F8A3 /* tastyburger.jpeg in Resources */,
 				5DE8C9191BC8FB5C00B302DC /* Assets.xcassets in Resources */,
 				5D6AA6AD1BCA2275004F0445 /* redthaicurry.jpeg in Resources */,
 				5DE8C9171BC8FB5C00B302DC /* Main.storyboard in Resources */,
 				5D6AA6BA1BCA61D4004F0445 /* localpoint.jpg in Resources */,
 				5D6AA6A31BCA1990004F0445 /* blue.png in Resources */,
+				5D519FC21BF2FCA60082F8A3 /* Rosemary-garlic pork loin.jpeg in Resources */,
 				5D6AA6B31BCA59DD004F0445 /* clock.png in Resources */,
 				5D6AA6B61BCA5FCF004F0445 /* UIButtonBarArrowLeft@3x.png in Resources */,
 				5D6AA6B71BCA5FCF004F0445 /* UIButtonBarArrowRight@3x.png in Resources */,
@@ -509,10 +517,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "What to Eat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sethitow.What-to-Eat";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sethitow.whattoeat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -521,10 +530,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "What to Eat/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sethitow.What-to-Eat";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sethitow.whattoeat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
