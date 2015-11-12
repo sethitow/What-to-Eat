@@ -22,8 +22,8 @@ class FoodItemController: NSObject {
         allFoodItems.removeAll()
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        let earlyDate = dateFormatter.dateFromString("2015-11-02T01:00:00-08:00")
-        let lateDate = dateFormatter.dateFromString("2015-11-02T23:45:00-08:00")
+        let earlyDate = dateFormatter.dateFromString("2015-11-10T01:00:00-08:00")
+        let lateDate = dateFormatter.dateFromString("2015-11-10T23:45:00-08:00")
         
         allFoodItems.append(FoodItem(
             title: "Grilled chicken breast",
@@ -57,7 +57,7 @@ class FoodItemController: NSObject {
         
         allFoodItems.append(FoodItem(
             title: "Stovetop Mac and Cheese",
-            foodDescription: "Add your own ingredients, blah",
+            foodDescription: "Add your own ingredients.",
             location: "Local Point, Custom Kitchen",
             locationID: "The Custom Kitchen",
             openingTime: earlyDate!,
@@ -66,19 +66,19 @@ class FoodItemController: NSObject {
             imageName: "macncheese.jpeg"))
         
         allFoodItems.append(FoodItem(
-            title: "Stovetop Mac and Cheese",
-            foodDescription: "Add your own ingredients, blah",
-            location: "Local Point, Custom Kitchen",
-            locationID: "The Custom Kitchen",
+            title: "Rosemary-garlic pork loin",
+            foodDescription: "roasted mushrooms and onions, celery in a Vidalia onion dressing",
+            location: "Local Point, The Big Kitchen",
+            locationID: "The Big Kitchen",
             openingTime: earlyDate!,
             closingTime: lateDate!,
-            mealOfDayString: "dinner",
-            imageName: "macncheese.jpeg"))
+            mealOfDayString: "lunch",
+            imageName: "Rosemary-garlic pork loin.jpeg"))
         
         allFoodItems.append(FoodItem(
             title: "Big Kahuna Burger",
             foodDescription: "A tasty burger",
-            location: "Local Point, Custom Kitchen",
+            location: "Local Point, The Grill",
             locationID: "The Custom Kitchen",
             openingTime: earlyDate!,
             closingTime: lateDate!,

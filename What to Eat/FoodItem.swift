@@ -26,7 +26,6 @@ class FoodItem: NSObject {
         self.locationID = locationID
         self.openingTime = openingTime
         self.closingTime = closingTime
-        self.validDate = NSDate(timeIntervalSinceReferenceDate: NSTimeInterval(270*60))
         self.mealOfDay = Meals(rawValue: mealOfDayString)!
         self.foodImage = UIImage(named: imageName)
         
@@ -43,10 +42,6 @@ class FoodItem: NSObject {
     var mealOfDay: Meals // Enum to keep track of what meal
    
     var foodImage: UIImage?
-    
-    var validDate: NSDate
-    
-    
     
 
     
