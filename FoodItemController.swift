@@ -16,7 +16,6 @@ class FoodItemController: NSObject {
     
     var lastUpdate: NSDate = NSDate()
     
-    //commented out due to depricated date format
     func updateDataWithDummyData(){
         
         allFoodItems.removeAll()
@@ -92,7 +91,7 @@ class FoodItemController: NSObject {
     func updateDataFromWeb(){
         
         // attempt to fetch the JSON file from the server
-        if let dataFromWeb = NSData(contentsOfURL: NSURL(string: "http://whattoeatuw.com/menus/localpoint-2015-11-1.json")!){
+        if let dataFromWeb = NSData(contentsOfURL: NSURL(string: "http://whattoeatuw.com/menus/localpoint-current.json")!){
         
             allFoodItems.removeAll() // clear the allFoodItems array
         
