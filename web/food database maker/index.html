@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link href="main.css" rel="stylesheet" media="screen" type="text/css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<script src="main.js"></script>
+		<title>JSON FoodItem Formatter</title>
+	</head>
+	<body>
+	<h2>Input</h2>
+		<div id="theForm">
+			<form>
+				<p>Meal Title (30 characters max):<input class="form-control" id="meal_title" maxlength="30" name="meal_title" placeholder="i.e. Brown Sugar Glazed Pork Loin" type="text" /></p>
+
+<p>Meal Subtitle (75 characters max):<input class="form-control" id="meal_description" maxlength="75" name="meal_description" placeholder="i.e. with mashed yams, caramelized apples and onions with kale." type="text" /></p>
+
+<p>Meal Location:<input class="form-control" id="meal_location" name="meal_location" placeholder="The Big Kitchen" type="text" /></p>
+
+<p>Meal Location ID:<input class="form-control" id="meal_location_id" name="meal_location_id" placeholder="The Big Kitchen" type="text" /></p>
+
+<p>Opening Time:<input class="form-control" id="meal_open_time_string" name="meal_open_time_string" placeholder="2015-11-02T01:00:00-08:00" type="text" /></p>
+<p>	<input class="form-control-year" id="meal_open_year" name="meal_open_year" placeholder="2015" type="text" />-
+	<input class="form-control-month" id="meal_open_month" name="meal_open_month" placeholder="11" type="text"  />-
+	<input class="form-control-day" id="meal_open_day" name="meal_open_day" placeholder="08" type="text"  />T
+	<input class="form-control-hour" id="meal_open_hour" name="meal_open_hour" placeholder="8" type="text" />:
+	<input class="form-control-minute" id="meal_open_minute" name="meal_open_minute" placeholder="30" type="text" />
+</p>
+
+<p>Closing Time:<input class="form-control" id="meal_close_time_string" name="meal_close_time_string" placeholder="2015-11-02T01:00:00-08:00" type="text" /></p>
+<p>	<input class="form-control-year" id="meal_close_year" name="meal_close_year" placeholder="2015" type="text" />-
+	<input class="form-control-month" id="meal_close_month" name="meal_close_month" placeholder="11" type="text"  />-
+	<input class="form-control-day" id="meal_close_day" name="meal_close_day" placeholder="08" type="text"  />T
+	<input class="form-control-hour" id="meal_close_hour" name="meal_close_hour" placeholder="8" type="text" />:
+	<input class="form-control-minute" id="meal_close_minute" name="meal_close_minute" placeholder="30" type="text" />
+</p>
+<p>Meal Type:<input class="form-control" id="meal_type" name="meal_type" placeholder="breakfast" type="text" /></p>
+
+<p>Meal Image Name:<input class="form-control" id="meal_image" name="meal_image" placeholder="image.jpg" type="text" /></p>
+<p><button class="btn btn-default" type="button" id="testSubmit">Go</button></p>
+
+			</form>
+		</div>
+
+		<h2>Output</h2>
+		<div id="theOutput">
+		
+			<textarea class="form-control" id="outputTextArea" readonly></textarea>
+
+		</div>
+
+		
+	</body>
+</html>
