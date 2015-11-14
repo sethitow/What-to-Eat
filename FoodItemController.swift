@@ -13,6 +13,7 @@ class FoodItemController: NSObject {
     static let sharedInstance = FoodItemController()
     
     var allFoodItems = [FoodItem]()
+    var nowFoodItems = [FoodItem]()
     
     var lastUpdate: NSDate = NSDate()
     
@@ -130,11 +131,11 @@ class FoodItemController: NSObject {
         
     }
     
-    func returnNowFoodItems() -> [FoodItem] {
+    func updateNowFoodItems() {
         
         let now = NSDate() // create date object representing current instant
         
-        var nowFoodItems = [FoodItem]() // create array of all food item open now
+        nowFoodItems.removeAll() // empty array of all food item open now
         
         for item in allFoodItems{ // for every food item in allFoodItems
             
@@ -143,8 +144,22 @@ class FoodItemController: NSObject {
             }
         }
         
+        if (nowFoodItems.isEmpty){
+            
+            nowFoodItems.append(FoodItem(
+                title: "No specials are avalible right now",
+                foodDescription: "",
+                location: "",
+                locationID: "The Big Kitchen",
+                openingTime: NSDate(),
+                closingTime: NSDate(),
+                mealOfDayString: "allDay",
+                imageName: ""))
+            
+            
+        }
         
-        return nowFoodItems // return the array
+        
     }
     
     func returnAllFoodItems() -> [FoodItem] {

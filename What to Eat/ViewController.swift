@@ -14,8 +14,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var tableView: UITableView!
     
     
-
-    var foodItems = [FoodItem]()
     
     override func viewDidLoad() {
 
@@ -31,24 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         FoodItemController.sharedInstance.updateDataFromWeb()
-        foodItems = FoodItemController.sharedInstance.returnNowFoodItems();
-        
-        if (foodItems.isEmpty){
-        
-            foodItems.append(FoodItem(
-                title: "No specials are avalible right now",
-                foodDescription: "",
-                location: "",
-                locationID: "The Big Kitchen",
-                openingTime: NSDate(),
-                closingTime: NSDate(),
-                mealOfDayString: "allDay",
-                imageName: ""))
-        
-            
-        }
-        
-
+        FoodItemController.sharedInstance.updateNowFoodItems();
         
     }
     
@@ -61,12 +42,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foodItems.count
+        return FoodItemController.sharedInstance.nowFoodItems.count
     }
     
     func tableView(tableView: UITableView,cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCellWithIdentifier("FoodItemCell",forIndexPath: indexPath) as! FoodItemCell
-            let item = foodItems[indexPath.row]
+            let item = FoodItemController.sharedInstance.nowFoodItems[indexPath.row]
         
         
         
@@ -124,7 +105,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let destViewController = segue.destinationViewController as! LocationViewController
             
             destViewController.receivedLocation = cell.locationID
-            destViewController.foodItems = foodItems
             
         }
     }
@@ -133,7 +113,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLayoutSubviews() {
         
         var index: Int
-        for index = 0; index < foodItems.count; ++index{
+        for index = 0; index < FoodItemController.sharedInstance.nowFoodItems.count; ++index{
             
             //commended out to to fatal error
             //let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0)) as! FoodItemCell
@@ -151,11 +131,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
         
         if(NSDate().timeIntervalSinceDate(FoodItemController.sharedInstance.lastUpdate) > 300){ // if last update was longer than 5 mins ago
-            
         FoodItemController.sharedInstance.updateDataFromWeb() // reupdate with web data
-        
         }
         
+        FoodItemController.sharedInstance.updateNowFoodItems();
         tableView.reloadData()
         
     }

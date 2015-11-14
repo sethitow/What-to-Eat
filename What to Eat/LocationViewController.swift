@@ -16,7 +16,6 @@ class LocationViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var receivedLocation:String?
     
     var locationItems = [LocationItem]()
-    var foodItems = [FoodItem]()
     var filteredLocations = [LocationItem]()
     var filteredFoodItems = [FoodItem]()
     
@@ -93,7 +92,7 @@ class LocationViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let locationPredicate = NSPredicate(format: "locationID contains[c] %@", receivedLocation!)
         let foodPredicate = NSPredicate(format: "locationID contains[c] %@", receivedLocation!)
         filteredLocations.append(((locationItems as NSArray).filteredArrayUsingPredicate(locationPredicate)).first as! LocationItem)
-        filteredFoodItems = (foodItems as NSArray).filteredArrayUsingPredicate(foodPredicate) as! [FoodItem]
+        filteredFoodItems = (FoodItemController.sharedInstance.nowFoodItems as NSArray).filteredArrayUsingPredicate(foodPredicate) as! [FoodItem]
         
         
 
