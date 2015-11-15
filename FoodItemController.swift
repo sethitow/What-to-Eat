@@ -147,7 +147,7 @@ class FoodItemController: NSObject {
         if (nowFoodItems.isEmpty){
             
             nowFoodItems.append(FoodItem(
-                title: "No specials are avalible right now",
+                title: "No specials are avalible now",
                 foodDescription: "",
                 location: "",
                 locationID: "The Big Kitchen",
