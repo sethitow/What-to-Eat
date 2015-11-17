@@ -11,29 +11,33 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var tableView: UITableView! // IBOutlet for main food tableView
     
-    
+    var refreshControl = UIRefreshControl() //pull-to-refresh control for main tableView
     
     override func viewDidLoad() {
-
+        super.viewDidLoad() //call viewDidLoad method
         
-        super.viewDidLoad()
-        
+        //set up notification fucntion to be called upon enter foregraound
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "enteredForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
         
+        //set up the food tableView
         tableView.dataSource = self
         tableView.delegate = self
         tableView.registerClass(FoodItemCell.self, forCellReuseIdentifier: "foodItemCell")
         
+        //set up refresh control
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView?.addSubview(refreshControl)
         
+        //update the data to be loaded into the tableView
         FoodItemController.sharedInstance.updateDataFromWeb()
         FoodItemController.sharedInstance.updateNowFoodItems();
         
     }
-    
-    
+ 
     
     // MARK: - Table view data source
     
@@ -66,7 +70,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let minutesUntilClose = totalMinutesUntilClose%60
         
         //if the dish closes in less than 2 hours, give a countdown
-        if(item.title == "No specials are avalible right now"){
+        if(item.title == "No specials are avalible now"){
             cell.closingTimeLabel.text=""
         }
         else if(hoursUntilClose >= 1){
@@ -83,8 +87,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             return cell
     }
-
-    func getCurrentMinutesofDay() -> Int {
+    
+    //TODO: make this better
+    func getCurrentMinutesofDay() -> Int { //returns the current time of day in minutes since midnight.
         
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
@@ -95,22 +100,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return hour*60 + minutes
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) { //called before the next view is loaded
         if segue.identifier == "showLocationSegue" {
-            
-            let indexPath = self.tableView.indexPathForSelectedRow
-            
-            let cell = tableView.cellForRowAtIndexPath(indexPath!) as! FoodItemCell
-            
-            let destViewController = segue.destinationViewController as! LocationViewController
-            
-            destViewController.receivedLocation = cell.locationID
+
+            let indexPath = self.tableView.indexPathForSelectedRow //get the indexPath that the user clicked on
+            let cell = tableView.cellForRowAtIndexPath(indexPath!) as! FoodItemCell // get the cell at that indexPath
+            let destViewController = segue.destinationViewController as! LocationViewController //get the destination view controller
+    
+            destViewController.receivedLocation = cell.locationID //pass the locationID to the destinationController
             
         }
     }
     
     
-    override func viewDidLayoutSubviews() {
+    override func viewDidLayoutSubviews() { //called after the view has been layed out, but before it is displayed to the user
         
         var index: Int
         for index = 0; index < FoodItemController.sharedInstance.nowFoodItems.count; ++index{
@@ -121,10 +125,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    func refresh(sender:AnyObject) { //called when the user pulls-to-refresh
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.LongStyle
+        
+        FoodItemController.sharedInstance.updateDataFromWeb() //update from the internet
+        FoodItemController.sharedInstance.updateNowFoodItems() //filter to currently open foodItems
+        
+        // update "last updated" title for refresh control
+        let updateString = "Last Updated at " + dateFormatter.stringFromDate(FoodItemController.sharedInstance.lastUpdate)
+        self.refreshControl.attributedTitle = NSAttributedString(string: updateString)
+        
+        
+        tableView.reloadData() //update the table
+        self.refreshControl.endRefreshing()//end the refreshing animation
     }
     
     func enteredForeground(notification: NSNotification) {
@@ -134,9 +152,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         FoodItemController.sharedInstance.updateDataFromWeb() // reupdate with web data
         }
         
-        FoodItemController.sharedInstance.updateNowFoodItems();
+        FoodItemController.sharedInstance.updateNowFoodItems()
         tableView.reloadData()
         
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
 
