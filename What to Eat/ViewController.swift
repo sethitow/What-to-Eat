@@ -119,9 +119,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var index: Int
         for index = 0; index < FoodItemController.sharedInstance.nowFoodItems.count; ++index{
             
-            //commended out to to fatal error
-            //let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0)) as! FoodItemCell
-            //cell.descriptionLabel.sizeToFit() // size the label to fit to top-justify the text
+            //top justify description label text
+            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0)) as! FoodItemCell
+            cell.descriptionLabel.sizeToFit() // size the label to fit to top-justify the text
             }
         
     }

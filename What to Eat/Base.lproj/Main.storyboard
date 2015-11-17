@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iJ7-Uu-CRg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iJ7-Uu-CRg">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -26,10 +26,10 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tmp-m3-fau" id="H6K-jA-CtZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="grilledchicken.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="sRc-3y-ggU">
+                                                <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grilledchicken.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="sRc-3y-ggU">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
@@ -69,7 +69,7 @@
                                                 <constraint firstItem="Imj-gF-XdX" firstAttribute="leading" secondItem="H6K-jA-CtZ" secondAttribute="leadingMargin" id="b5d-ZY-J6Q"/>
                                                 <constraint firstItem="sRc-3y-ggU" firstAttribute="leading" secondItem="H6K-jA-CtZ" secondAttribute="leadingMargin" constant="-8" id="hgJ-hB-EI9"/>
                                                 <constraint firstItem="ltG-mR-Crs" firstAttribute="trailing" secondItem="H6K-jA-CtZ" secondAttribute="trailingMargin" id="oVD-gm-qa8"/>
-                                                <constraint firstItem="ltG-mR-Crs" firstAttribute="top" secondItem="sDL-Eq-y2W" secondAttribute="bottom" id="sgR-BO-0oT"/>
+                                                <constraint firstItem="ltG-mR-Crs" firstAttribute="top" secondItem="sDL-Eq-y2W" secondAttribute="bottom" constant="-10" id="sgR-BO-0oT"/>
                                                 <constraint firstItem="ltG-mR-Crs" firstAttribute="leading" secondItem="H6K-jA-CtZ" secondAttribute="leadingMargin" id="vDO-bW-Nhy"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Imj-gF-XdX" secondAttribute="bottom" constant="-2.5" id="vJJ-KO-O5f"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="sRc-3y-ggU" secondAttribute="bottom" constant="-8" id="zAb-3v-m3R"/>
